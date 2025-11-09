@@ -4,243 +4,414 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxor - Premium Accessories</title>
+
+
+    <title>Luxor</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="micro-animations.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 
-<body class="body">
-    <!-- Hero Section: Full-screen background image with centered text overlay, minimal text, call to action -->
-    <section id="hero" class="hero" style="background-image: url('./assets/placeholder.svg');">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">LUXOR</h1>
-            <p class="hero-subtitle">Timeless elegance in every accessory</p>
-            <a href="#collection" class="btn btn-primary">Discover Collection</a>
+<body class="le-body">
+    <!-- fullscreen background image with low centered text overlay, minimal text, call to action -->
+    <section id="hero" class="hero">
+        <div class="hero-text text">
+            <h1 class="hero-title">Luxor — салон изысканных подарков</h1>
+            <p class="hero-subtitle">Элегантность, не подвластная времени. Быть может о философии бренда можно рассказать здесь? Аксессуары, которые не стареют. Вечный стиль в каждой детали. Вечная красота в каждой детали. Искусство вечной элегантности. Роскошь вне времени. Элегантность, которая останется с вами навсегда</p>
+            <a href="#collection" class="btn btn-primary" onclick="document.querySelector('#about-brand').scrollIntoView({behavior: 'smooth'}); event.preventDefault();">Открыть Коллекцию</a>
         </div>
+        <div class="hero-carousel">
+            <div class="embla hero-embla">
+                <div class="embla__viewport hero-embla__viewport">
+                    <div class="embla__container hero-embla__container">
+                        <div class="embla__slide hero-embla__slide" data-title="Скатерть" data-material="Хлопок" data-origin="Испания" data-year="2024">
+                            <img src="./assets/photos/hero/1.webp" alt="Luxor" class="hero-embla__slide__img">
+                        </div>
+                        <div class="embla__slide hero-embla__slide" data-title="Статуэтка" data-material="Мрамор" data-origin="Италия" data-year="2023">
+                            <img src="./assets/photos/hero/2.webp" alt="Luxor" class="hero-embla__slide__img">
+                        </div>
+                        <div class="embla__slide hero-embla__slide" data-title="Подсвечники" data-material="Серебро" data-origin="Франция" data-year="2024">
+                            <img src="./assets/photos/hero/3.webp" alt="Luxor" class="hero-embla__slide__img">
+                        </div>
+                        <div class="embla__slide hero-embla__slide" data-title="Статуэтка" data-material="Мрамор" data-origin="Мозамбик" data-year="2023">
+                            <img src="./assets/photos/hero/4.webp" alt="Luxor" class="hero-embla__slide__img">
+                        </div>
+                        <div class="embla__slide hero-embla__slide" data-title="Кубок" data-material="Золото" data-origin="Германия" data-year="2024">
+                            <img src="./assets/photos/hero/5.webp" alt="Luxor" class="hero-embla__slide__img">
+                        </div>
+                        <div class="embla__slide hero-embla__slide" data-title="Нож для масла" data-material="Слоновая кость" data-origin="Индия" data-year="2023">
+                            <img src="./assets/photos/hero/6.webp" alt="Luxor" class="hero-embla__slide__img">
+                        </div>
+                        <div class="embla__slide hero-embla__slide" data-title="Постельное белье" data-material="Шёлк" data-origin="Китай" data-year="2024">
+                            <img src="./assets/photos/hero/7.webp" alt="Luxor" class="hero-embla__slide__img">
+                        </div>
+                        <div class="embla__slide hero-embla__slide" data-title="Вилки Ложки–Поварешки" data-material="Серебро" data-origin="Франция" data-year="2023">
+                            <img src="./assets/photos/hero/8.webp" alt="Luxor" class="hero-embla__slide__img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide-info">
+                <h3 class="hero-slide-title"></h3>
+                <p class="hero-slide-details"></p>
+            </div>
+        </div>
+        
     </section>
 
-    <!-- About Brand Section: Brand story with large images, minimal text, focus on craftsmanship -->
+    
+
+    <!-- Brand story with a lot of small images, minimal text -->
     <section id="about-brand" class="about-brand">
         <div class="about-brand-container">
-            <div class="about-brand-text">
-                <h2 class="section-title">Crafted for the Discerning</h2>
-                <p>At Luxor, we believe in the power of simplicity. Each piece is meticulously handcrafted using the
-                    finest materials, designed to complement your lifestyle with understated luxury.</p>
-                <p>Our accessories are not just items—they are statements of refined taste and enduring quality.</p>
+            <div class="about-brand-text text">
+                <h2 class="section-title" id="about-brand-title">Собрано для ценящих</h2>
+                <p>Все представленные аксессуары это проявление утонченного вкуса, не стареющего со временем.</p>
             </div>
             <div class="about-brand-images">
-                <div class="parallax-column" data-speed="0.5">
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
+                <div class="parallax-column">
+                    <div class="product-image" data-title="Ваза" data-material="Материал, glass" data-origin="США"
+                        data-year="2022" data-src="./assets/photos/any/luxor_1.webp"></div>
+                    <div class="product-image" data-title="Ваза" data-material="Материал" data-origin="Германия"
+                        data-year="2021" data-src="./assets/photos/any/luxor_2.webp"></div>
+                    <div class="product-image" data-title="Ваза" data-material="Материал" data-origin="Индия"
+                        data-year="2020" data-src="./assets/photos/any/luxor_3.webp"></div>
+                    <div class="product-image" data-title="Ваза" data-material="Материал" data-origin="Китай"
+                        data-year="2019" data-src="./assets/photos/any/luxor_4.webp"></div>
                 </div>
-                <div class="parallax-column" data-speed="0.8">
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
+                <div class="parallax-column">
+                    <div class="product-image" data-title="Статуэтка" data-material="Материал" data-origin="Узбекистан"
+                        data-year="2023" data-src="./assets/photos/any/luxor_5.webp"></div>
+                    <div class="product-image" data-title="Статуэтка" data-material="Материал" data-origin="Чехия"
+                        data-year="2022" data-src="./assets/photos/any/luxor_6.webp"></div>
+                    <div class="product-image" data-title="Статуэтка" data-material="Материал" data-origin="Мадагаскар"
+                        data-year="2021" data-src="./assets/photos/any/luxor_7.webp"></div>
+                    <div class="product-image" data-title="Статуэтка" data-material="Материал" data-origin="Швейцария"
+                        data-year="2020" data-src="./assets/photos/any/luxor_8.webp"></div>
                 </div>
-                <div class="parallax-column" data-speed="0.3">
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
+                <div class="parallax-column">
+                    <div class="product-image" data-title="Кубок" data-material="Материал" data-origin="Япония"
+                        data-year="2019" data-src="./assets/photos/any/luxor_9.webp"></div>
+                    <div class="product-image" data-title="Кубок" data-material="Материал" data-origin="Италия"
+                        data-year="2023" data-src="./assets/photos/any/luxor_10.webp"></div>
+                    <div class="product-image" data-title="Кубок" data-material="Материал" data-origin="Египет"
+                        data-year="2022" data-src="./assets/photos/any/luxor_11.webp"></div>
+                    <div class="product-image" data-title="Кубок" data-material="Материал" data-origin="Малайзия"
+                        data-year="2021" data-src="./assets/photos/any/luxor_12.webp"></div>
                 </div>
-                <div class="parallax-column" data-speed="0.6">
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
+                <div class="parallax-column">
+                    <div class="product-image" data-title="Шкатулка" data-material="Материал" data-origin="Норвегия"
+                        data-year="2020" data-src="./assets/photos/any/luxor_13.webp"></div>
+                    <div class="product-image" data-title="Шкатулка" data-material="Материал" data-origin="Морокко"
+                        data-year="2019" data-src="./assets/photos/any/luxor_14.webp"></div>
+                    <div class="product-image" data-title="Шкатулка" data-material="Материал" data-origin="Чили"
+                        data-year="2023" data-src="./assets/photos/any/luxor_15.webp"></div>
+                    <div class="product-image" data-title="Шкатулка" data-material="Материал" data-origin="Австрия"
+                        data-year="2022" data-src="./assets/photos/any/luxor_16.webp"></div>
                 </div>
-                <div class="parallax-column" data-speed="0.4">
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
+                <div class="parallax-column">
+                    <div class="product-image" data-title="Декантер" data-material="Материал" data-origin="ОАЭ"
+                        data-year="2021" data-src="./assets/photos/any/luxor_17.webp"></div>
+                    <div class="product-image" data-title="Декантер" data-material="Материал" data-origin="Мексика"
+                        data-year="2020" data-src="./assets/photos/any/luxor_18.webp"></div>
+                    <div class="product-image" data-title="Декантер" data-material="Материал" data-origin="Испания"
+                        data-year="2019" data-src="./assets/photos/any/luxor_19.webp"></div>
+                    <div class="product-image" data-title="Декантер" data-material="Материал" data-origin="Южная Африка"
+                        data-year="2023" data-src="./assets/photos/any/luxor_20.webp"></div>
                 </div>
-                <div class="parallax-column" data-speed="1">
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                </div>
-                <div class="parallax-column" data-speed="0.9">
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                </div>
-                <div class="parallax-column" data-speed="0.1">
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
-                    <div class="parallax-image" style="background-image: url('./assets/placeholder.svg');"></div>
+                <div class="parallax-column">
+                    <div class="product-image" data-title="Постельное белье" data-material="Материал" data-origin="Аргентина"
+                        data-year="2022" data-src="./assets/photos/any/luxor_21.webp"></div>
+                    <div class="product-image" data-title="Постельное белье" data-material="Материал" data-origin="Англия"
+                        data-year="2021" data-src="./assets/photos/any/luxor_22.webp"></div>
+                    <div class="product-image" data-title="Постельное белье" data-material="Материал" data-origin="Франция"
+                        data-year="2020" data-src="./assets/photos/any/luxor_23.webp"></div>
+                    <div class="product-image" data-title="Постельное белье" data-material="Материал" data-origin="Греция"
+                        data-year="2019" data-src="./assets/photos/any/luxor_24.webp"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Collection Section: Showcase of products with large images, minimal descriptions -->
+    <!-- Showcase of products with large images, minimal descriptions -->
     <section id="collection" class="collection">
-        <div class="collection-container">
-            <h2 class="section-title">Signature Collection</h2>
-            <div class="collection-grid">
-                <div class="collection-item">
-                    <img src="./assets/placeholder.svg" alt="Premium handbag" class="collection-item-img">
-                    <h3 class="collection-item-title">Accesories</h3>
-                    <p class="collection-item-description">Italian leather, timeless design</p>
+        <h2 class="section-title counter-parallax">Категории</h2>
+        <div class="collection-grid">
+            <div class="collection-category-container">
+                <!-- y axis embla to be introduced -->
+                <h3 class="collection-category-title animated-text">Декор & Аксессуары</h3>
+                <div class="embla">
+                    <div class="embla__viewport collection-category-gallery">
+                        <div class="embla__container">
+                            <div class="embla__slide collection-item">
+                                <img data-src="./assets/photos/posudina_1.webp" alt="Lorem ipsum" class="collection-item-img">
+                                <div class="collection-item-description">
+                                    <h5>Ваза</h5>
+                                    <p> Индия, 2024, мрамор</p>
+                                </div>
+                            </div>
+                            <div class="embla__slide collection-item">
+                                <img data-src="./assets/photos/posudina_2.webp" alt="Lorem ipsum" class="collection-item-img">
+                                <div class="collection-item-description">
+                                    <h5>Ваза</h5>
+                                    <p> Индия, 2024, мрамор</p>
+                                </div>
+                            </div>
+                            <div class="embla__slide collection-item">
+                                <img data-src="./assets/photos/posudina_3.webp" alt="Lorem ipsum" class="collection-item-img">
+                                <div class="collection-item-description">
+                                    <h5>Ваза</h5>
+                                    <p> Индия, 2024, мрамор</p>
+                                </div>
+                            </div>
+                            <div class="embla__slide collection-item">
+                                <img data-src="./assets/photos/posudina_4.webp" alt="Lorem ipsum" class="collection-item-img">
+                                <div class="collection-item-description">
+                                    <h5>Ваза</h5>
+                                    <p> Индия, 2024, мрамор</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="collection-item">
-                    <img src="./assets/placeholder.svg" alt="Elegant scarf" class="collection-item-img">
-                    <h3 class="collection-item-title">Textile</h3>
-                    <p class="collection-item-description">Hand-dyed silk, artisanal craftsmanship</p>
+            </div>
+
+            <div class="collection-category-container">
+                <h3 class="collection-category-title animated-text">Текстиль</h3>
+                <div class="embla">
+                    <div class="embla__viewport collection-category-gallery">
+                        <div class="embla__container">
+                            <div class="embla__slide collection-item">
+                                <img data-src="./assets/photos/bronya_1.webp" alt="Lorem ipsum" class="collection-item-img">
+                                <div class="collection-item-description">
+                                    <h5>Халат</h5>
+                                    <p>Испания, 2023, шелк</p>
+                                </div>
+                            </div>
+                            <div class="embla__slide collection-item">
+                                <img data-src="./assets/photos/bronya_2.webp" alt="Lorem ipsum" class="collection-item-img">
+                                <div class="collection-item-description">
+                                    <h5>Халат</h5>
+                                    <p> Испания, 2023, шёлк</p>
+                                </div>
+                            </div>
+                            <div class="embla__slide collection-item">
+                                <img data-src="./assets/photos/bronya_3.webp" alt="Lorem ipsum" class="collection-item-img">
+                                <div class="collection-item-description">
+                                    <h5>Халат</h5>
+                                    <p> Испания, 2023, шёлк</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="collection-item">
-                    <img src="./assets/placeholder.svg" alt="Luxury watch" class="collection-item-img">
-                    <h3 class="collection-item-title">Decor</h3>
-                    <p class="collection-item-description">Swiss movement, precision engineering</p>
+            </div>
+
+            <div class="collection-category-container">
+                <h3 class="collection-category-title animated-text">Посуда</h3>
+
+                <div class="embla">
+                    <div class="embla__viewport collection-category-gallery">
+                        <div class="embla__container">
+                            <div class="embla__slide collection-item">
+                                <img data-src="./assets/photos/kinzhal_1.webp" alt="Lorem ipsum" class="collection-item-img">
+                                <div class="collection-item-description">
+                                    <h5>Сервиз</h5>
+                                    <p>Франция, 2020, серебро</p>
+                                </div>
+                            </div>
+                            <div class="embla__slide collection-item">
+                                <img data-src="./assets/photos/kinzhal_2.webp" alt="Lorem ipsum" class="collection-item-img">
+                                <div class="collection-item-description">
+                                    <h5>Сервиз</h5>
+                                    <p>Франция, 2020, серебро</p>
+                                </div>
+                            </div>
+                            <div class="embla__slide collection-item">
+                                <img data-src="./assets/photos/kinzhal_3.webp" alt="Lorem ipsum" class="collection-item-img">
+                                <div class="collection-item-description">
+                                    <h5>Сервиз</h5>
+                                    <p>Франция, 2020, серебро</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Exclusive Qualities Section: Three feature cards highlighting unique selling points -->
+    <!-- Three feature cards highlighting unique selling points -->
     <section id="exclusive-qualities" class="exclusive-qualities">
         <div class="exclusive-qualities-container">
-            <h2 class="section-title">Why Luxor</h2>
-            <div class="qualities-grid">
+            <h2 class="section-title animated-text">Почему Luxor?</h2>
+            <div class="qualities-list">
                 <div class="quality-item">
                     <div class="quality-icon">
-                        <span>★</span>
+                        <img src="./assets/placeholder.svg" alt="icon">
                     </div>
-                    <h3 class="quality-title">Handcrafted Excellence</h3>
-                    <p>Each piece is individually crafted by master artisans, ensuring unparalleled quality and
-                        attention to detail.</p>
+                    <h3 class="quality-title">Персональный подход</h3>
+                    <p>Давайте поймем, что за пункты тут будут перечислены, чтобы можно было подобрать к ним иконки. Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero nulla itaque omnis consequatur nobis vel porro provident soluta ab minus, placeat sit nemo repudiandae nostrum minima non cumque incidunt tempora?</p>
                 </div>
                 <div class="quality-item">
                     <div class="quality-icon">
-                        <span>∞</span>
+                        <img src="./assets/placeholder.svg" alt="icon">
                     </div>
-                    <h3 class="quality-title">Timeless Design</h3>
-                    <p>Our designs transcend trends, offering pieces that remain elegant and relevant season after
-                        season.</p>
+                    <h3 class="quality-title">Гарантия на всю жизнь</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero nulla itaque omnis consequatur nobis vel porro provident soluta ab minus, placeat sit nemo repudiandae nostrum minima non cumque incidunt tempora?</p>
                 </div>
                 <div class="quality-item">
                     <div class="quality-icon">
-                        <span>♔</span>
+                        <img src="./assets/placeholder.svg" alt="icon">
                     </div>
-                    <h3 class="quality-title">Sustainable Luxury</h3>
-                    <p>We source the finest materials responsibly, creating accessories that are as kind to the planet
-                        as they are beautiful.</p>
+                    <h3 class="quality-title">Исключительное качество</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero nulla itaque omnis consequatur nobis vel porro provident soluta ab minus, placeat sit nemo repudiandae nostrum minima non cumque incidunt tempora?</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section: Newsletter signup form with name, email, telephone -->
+    <!-- CTA Section: Callback signup form with name, email, telephone -->
     <section id="cta" class="cta">
-        <div class="cta-container">
-            <h2 class="section-title">Stay Connected</h2>
-            <p class="cta-subtitle">Be the first to know about new collections and exclusive offers.</p>
+        <h2 class="section-title animated-text" id="cta-title">Готовы прикоснуться к наследию?</h2>
+        <div class="cta-container counter-parallax">
+            <p class="cta-subtitle">Оставьте свой номер телефона и мы с Вами свяжемся.</p>
             <form class="cta-form">
-                <div class="form-grid">
-                    <input type="text" placeholder="Your Name" class="form-input" required>
-                    <input type="email" placeholder="Email Address" class="form-input" required>
-                    <input type="tel" placeholder="Telephone" class="form-input" required>
+                <input type="tel" placeholder="Ваш номер телефона?" class="form-input" id="telephone" required>
+                <div class="form-dropdown" id="form-dropdown">
+                    <input type="text" placeholder="Как к Вам обращаться?" class="form-input" required>
+                    <input type="email" placeholder="Электронная почта?" class="form-input">
+                    <button type="submit" class="btn btn-secondary">Оставить Заявку</button>
                 </div>
-                <button type="submit" class="btn btn-secondary">Subscribe</button>
             </form>
         </div>
     </section>
 
-    <!-- Footer Section: Redesigned footer with image, contact, and product listings -->
-    <footer id="footer" class="footer">
-        <div class="footer-container">
-            <div class="footer-left">
-                <div class="footer-image">
-                    <img src="./assets/placeholder.svg" alt="Luxor" class="footer-image-img">
+    <!-- Footer with salon image, contact, and product listings -->
+    <footer id="footer">
+        <div class="footer-info">
+            <div class="footer-contact">
+                <div class="footer-large-text">
+                    <h2>Luxor</h2>
+                    <a href="#" class="contact-phone">+7 (000) 000-00-00</a>
+                    <p class="contact-email">info@luxor.salon</p>
                 </div>
-                <div class="footer-contact">
-                    <p>
-                        <a href="#" class="contact-phone">+7 (000) 000-00-00</a>
-                    </p>
-                    <p class="contact-email">Email: info@luxor.salon</p>
-                    <ul class="contact-hours">
-                        <li>Monday to Friday: 10am - 5pm</li>
-                        <li>Weekend: 10am - 3pm</li>
+                <div class="contact-hours">
+                    <p>Пятигорск, ул. Ессентукская 31, ТЦ «Вершина Плаза»</p>
+                    <ul>
+                        <li>Понедельник — Пятница: 12:00 – 22:00</li>
+                        <li>Выходные: 12:00 - 22:00</li>
                     </ul>
-                    <ul class="social-links">
-                        <li>
-                            <a href="#" class="social-link">
-                                <span class="sr-only">Telegram</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="social-link">
-                                <span class="sr-only">VK</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <p class="mt-8"><a href="#" class="footer-link">Privacy Policy</a></p>
-                    <p>&copy; 2025 Luxor.</p>
                 </div>
+                <ul class="social-links">
+                    <li>
+                        <a href="#" class="social-link">
+                            <span class="sr-only">Telegram <span class="external-link">↗</span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="social-link">
+                            <span class="sr-only">VK <span class="external-link">↗</span></span>
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <div class="footer-right">
-                <div class="product-grid">
-                    <div class="product-column">
-                        <p class="product-title">Decor & Accessories</p>
-                        <ul class="product-list">
-                            <li><a href="#" class="product-link">Вазы</a></li>
-                            <li><a href="#" class="product-link">Фруктовницы</a></li>
-                            <li><a href="#" class="product-link">Рамки для фото</a></li>
-                            <li><a href="#" class="product-link">Фарфоровые статуэтки</a></li>
-                            <li><a href="#" class="product-link">Шкатулки</a></li>
-                            <li><a href="#" class="product-link">Подарки для мужчин</a></li>
-                            <li><a href="#" class="product-link">Подсвечники</a></li>
-                            <li><a href="#" class="product-link">Новогодний декор</a></li>
-                            <li><a href="#" class="product-link">Ароматизированные свечи и диффузоры</a></li>
-                        </ul>
-                    </div>
-                    <div class="product-column">
-                        <p class="product-title">Textile</p>
-                        <ul class="product-list">
-                            <li><a href="#" class="product-link">Комплекты постельного белья</a></li>
-                            <li><a href="#" class="product-link">Покрывала</a></li>
-                            <li><a href="#" class="product-link">Декоративные подушки</a></li>
-                            <li><a href="#" class="product-link">Пледы</a></li>
-                            <li><a href="#" class="product-link">Наматрасники</a></li>
-                            <li><a href="#" class="product-link">Подушки для комфортного сна</a></li>
-                            <li><a href="#" class="product-link">Одеяла</a></li>
-                            <li><a href="#" class="product-link">Коврики для ванной комнаты</a></li>
-                            <li><a href="#" class="product-link">Халаты</a></li>
-                            <li><a href="#" class="product-link">Полотенца банные</a></li>
-                            <li><a href="#" class="product-link">Полотенца для рук</a></li>
-                            <li><a href="#" class="product-link">Полотенца для лица</a></li>
-                            <li><a href="#" class="product-link">Пляжные полотенца</a></li>
-                            <li><a href="#" class="product-link">Полотенца для занятия спортом</a></li>
-                        </ul>
-                    </div>
-                    <div class="product-column">
-                        <p class="product-title">Tableware</p>
-                        <ul class="product-list">
-                            <li><a href="#" class="product-link">Сервизы столовые</a></li>
-                            <li><a href="#" class="product-link">Сервизы чайные</a></li>
-                            <li><a href="#" class="product-link">Бокалы</a></li>
-                            <li><a href="#" class="product-link">Графины и декантеры</a></li>
-                            <li><a href="#" class="product-link">Столовые приборы</a></li>
-                            <li><a href="#" class="product-link">Предметы сервировки</a></li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="footer-image">
+                <img src="./assets/placeholder.svg" alt="Luxor" class="footer-image-img">
             </div>
         </div>
+        <div class="center-me">
+            <div class="seo-bomb">
+                <div class="product-column">
+                    <p class="product-title">Декор & Аксессуары</p>
+                    <ul class="product-list">
+                        <li><a href="#" class="product-footer-category">Вазы</a></li>
+                        <li><a href="#" class="product-footer-category">Фруктовницы</a></li>
+                        <li><a href="#" class="product-footer-category">Рамки для фото</a></li>
+                        <li><a href="#" class="product-footer-category">Фарфоровые статуэтки</a></li>
+                        <li><a href="#" class="product-footer-category">Шкатулки</a></li>
+                        <li><a href="#" class="product-footer-category">Подарки для мужчин</a></li>
+                        <li><a href="#" class="product-footer-category">Подсвечники</a></li>
+                        <li><a href="#" class="product-footer-category">Новогодний декор</a></li>
+                        <li><a href="#" class="product-footer-category">Ароматизированные свечи и диффузоры</a></li>
+                    </ul>
+                </div>
+                <div class="product-column">
+                    <p class="product-title">Текстиль</p>
+                    <ul class="product-list">
+                        <li><a href="#" class="product-footer-category">Комплекты постельного белья</a></li>
+                        <li><a href="#" class="product-footer-category">Покрывала</a></li>
+                        <li><a href="#" class="product-footer-category">Декоративные подушки</a></li>
+                        <li><a href="#" class="product-footer-category">Пледы</a></li>
+                        <li><a href="#" class="product-footer-category">Наматрасники</a></li>
+                        <li><a href="#" class="product-footer-category">Подушки для комфортного сна</a></li>
+                        <li><a href="#" class="product-footer-category">Одеяла</a></li>
+                        <li><a href="#" class="product-footer-category">Коврики для ванной комнаты</a></li>
+                        <li><a href="#" class="product-footer-category">Халаты</a></li>
+                        <li><a href="#" class="product-footer-category">Полотенца банные</a></li>
+                        <li><a href="#" class="product-footer-category">Полотенца для рук</a></li>
+                        <li><a href="#" class="product-footer-category">Полотенца для лица</a></li>
+                        <li><a href="#" class="product-footer-category">Пляжные полотенца</a></li>
+                        <li><a href="#" class="product-footer-category">Полотенца для занятия спортом</a></li>
+                    </ul>
+                </div>
+                <div class="product-column">
+                    <p class="product-title">Посуда</p>
+                    <ul class="product-list">
+                        <li><a href="#" class="product-footer-category">Сервизы столовые</a></li>
+                        <li><a href="#" class="product-footer-category">Сервизы чайные</a></li>
+                        <li><a href="#" class="product-footer-category">Бокалы</a></li>
+                        <li><a href="#" class="product-footer-category">Графины и декантеры</a></li>
+                        <li><a href="#" class="product-footer-category">Столовые приборы</a></li>
+                        <li><a href="#" class="product-footer-category">Предметы сервировки</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="lil-extra">
+                <p><a href="#" class="footer-link">О конфеденциальности</a></p>
+                <p>&copy; 2025 Luxor.</p>
+            </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="main.js"></script>
+    <!-- gallery overlay -->
+    <div class="gallery-overlay" id="gallery-overlay">
+        <div class="gallery-container">
+            <div class="embla embla-gallery">
+                <div class="embla__viewport" id="gallery-viewport">
+                    <div class="embla__container" id="gallery-container">
+                        <!-- slides will be dynamically generated -->
+                    </div>
+                </div>
+                <div class="gallery-controls">
+                    <button class="gallery-button gallery-button--prev" id="gallery-prev">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <button class="gallery-button gallery-button--next" id="gallery-next">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="gallery-info">
+                <h4 class="gallery-item-title animated-text"></h4>
+                <p class="gallery-item-description"></p>
+                <a href="#cta" class="gallery-request-link">Узнать больше</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
+    <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
+    <script type="module" src="main.js"></script>
 </body>
 
 </html>
