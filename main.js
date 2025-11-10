@@ -104,24 +104,26 @@ document.addEventListener('DOMContentLoaded', () => {
     QUALITY ITEMS PARALLAX
   */
 
-  const qualityItems = document.querySelectorAll('.quality-item');
+  if (window.innerWidth > 768) {
+    const qualityItems = document.querySelectorAll('.quality-item');
 
-  qualityItems.forEach((item, index) => {
-    let yValue = 0;
-    if (index === 1) { // middle item
-      yValue = 100;
-    }
-    gsap.to(item, {
-      y: yValue,
-      ease: "none",
-      scrollTrigger: {
-        trigger: "#exclusive-qualities",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true
+    qualityItems.forEach((item, index) => {
+      let yValue = 0;
+      if (index === 1) { // middle item
+        yValue = 100;
       }
+      gsap.to(item, {
+        y: yValue,
+        ease: "none",
+        scrollTrigger: {
+          trigger: "#exclusive-qualities",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true
+        }
+      });
     });
-  });
+  }
 
   /*
     ANIMATED TEXT PARALLAX

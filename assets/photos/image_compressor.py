@@ -15,7 +15,7 @@ MAX_DIMENSION = 1080    # maximum width or height in pixels
 RECURSIVE = False        # whether to process subdirectories
 WEBP_LOSSLESS = False   # whether to use lossless compression for webp (for png with alpha)
 CONVERT_TO_WEBP = True  # whether to convert images to webp format
-DELETE_ORIGINALS = False # whether to delete original files after successful compression
+DELETE_ORIGINALS = True # whether to delete original files after successful compression
 
 # list to track unsuccessful compressions
 FAILED_COMPRESSIONS = []
