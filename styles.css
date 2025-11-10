@@ -34,6 +34,67 @@
     src: url("./assets/fonts/EBGaramond-Italic-VariableFont_wght.ttf");
 }
 
+
+
+
+/* development overlay */
+.dev-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    transition: opacity 0.3s ease;
+}
+
+.dev-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dev-overlay-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.dev-overlay-text {
+    color: white;
+    font-size: 1.5rem;
+    font-family: var(--serifik);
+    margin: 0;
+}
+
+.dev-overlay-button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-family: var(--serifik);
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dev-overlay-button:hover {
+    background-color: white;
+    color: black;
+}
+/* development overlay end */
+
+
+
+
 :root{
     --white: hsla(0, 0%, 100%, 0.95);
     --black: rgba(0, 0, 0, 0.80);
@@ -298,10 +359,12 @@ TODO: add
 
 .hero-slide-info {
     position: absolute;
+    bottom: 3rem;
+    left: 6rem;
     z-index: 1;
     color: var(--white);
     padding-right: 3rem;
-    margin-left: 2rem;
+    /* margin-left: 2rem; */
     min-width: 200px;
     opacity: 0.9;
 }
@@ -472,7 +535,7 @@ TODO: add
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding-inline: 3rem;
+    padding-inline: 0rem;
 }
 @media (max-width: 767px) {
     .collection-item{
@@ -528,6 +591,7 @@ TODO: add
 .embla__container {
     display: flex;
     gap: 1rem;
+    padding-inline: 3rem;
 }
 
 .embla__slide {
@@ -566,6 +630,7 @@ TODO: add
 
     .embla__container {
         gap: 0.5rem;
+        padding-inline: 0rem;
     }
 }
 
@@ -852,7 +917,7 @@ ddddd
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    margin: 8rem;
+    margin: 4rem;
     justify-content: center;
 }
 @media (max-width: 767px) {

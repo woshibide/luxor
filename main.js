@@ -2,6 +2,25 @@ import Cleave from './node_modules/cleave.js/dist/cleave-esm.js';
 import './node_modules/cleave.js/dist/addons/cleave-phone.ru.js';
 
 
+// development overlay
+const devOverlay = document.createElement('div');
+devOverlay.className = 'dev-overlay';
+devOverlay.innerHTML = `
+  <div class="dev-overlay-content">
+    <p class="dev-overlay-text">website is under development</p>
+    <button class="dev-overlay-button">ok, let me see</button>
+  </div>
+`;
+document.body.appendChild(devOverlay);
+
+document.querySelector('.dev-overlay-button').addEventListener('click', () => {
+  devOverlay.classList.add('hidden');
+  setTimeout(() => {
+    devOverlay.remove();
+  }, 300);
+});
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
   /*
